@@ -3,145 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vijay Daswani's Resume</title>
+    <title>Vijay Daswani's Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div id="loader">
+    <div id="loader" class="loader">
         <div class="loader-bar"></div>
     </div>
 
     <div class="content">
         <header>
-            <h1 class="typing-header">Vijay Daswani</h1>
-            <h2>Cloud Architect | SRE Lead | Research & Development</h2>
-            <p>Dubai, UAE | +971509930472 | <a href="mailto:vijay.daswani@gmail.com">vijay.daswani@gmail.com</a> | <a href="https://www.linkedin.com/in/vijaydaswani11">LinkedIn</a></p>
+            <h1>Vijay Daswani</h1>
+            <p>Cloud Architect | SRE Lead | Research & Development</p>
+            <p>Dubai, UAE | +971509930472 | vijay.daswani@gmail.com | <a href="https://www.linkedin.com/in/vijaydaswani11" target="_blank">LinkedIn</a></p>
         </header>
 
-        <section class="summary-section">
-            <h2>Summary</h2>
-            <p>Results-driven Cloud Architect and SRE Lead with over 7 years of experience in cloud, DevOps, and infrastructure automation. Proven ability to lead cross-functional teams and deliver high-impact projects on time and within budget.</p>
+        <section id="summary">
+            <h2>Professional Summary</h2>
+            <p>Cloud, DevOps, and SRE professional with 6.5+ years of experience in crafting, deploying, and managing highly available, scalable, and fault-tolerant cloud environments. Expertise in Azure and AWS, complemented by strong proficiency in Kubernetes, Docker, and Helm. Adept at using Terraform and Ansible for seamless infrastructure automation and Jenkins CI/CD and GitOps for efficient deployment pipelines.</p>
         </section>
 
-        <section class="skills-section">
+        <section id="skills">
             <h2>Skills</h2>
-            <div class="skill">
-                <div class="skill-name">
-                    <span>Cloud Architecture</span>
-                    <span>90%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" style="width: 90%;"></div>
-                </div>
+            <div class="skill-bar">
+                <span>Cloud (Azure, AWS)</span>
+                <div class="progress" style="width: 90%;"></div>
             </div>
-            <div class="skill">
-                <div class="skill-name">
-                    <span>DevOps Tools</span>
-                    <span>85%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" style="width: 85%;"></div>
-                </div>
+            <div class="skill-bar">
+                <span>Containerization (Docker, Kubernetes)</span>
+                <div class="progress" style="width: 85%;"></div>
             </div>
-            <div class="skill">
-                <div class="skill-name">
-                    <span>Python</span>
-                    <span>90%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" style="width: 90%;"></div>
-                </div>
+            <div class="skill-bar">
+                <span>Infrastructure as Code (Terraform, Ansible)</span>
+                <div class="progress" style="width: 80%;"></div>
             </div>
-            <div class="skill">
-                <div class="skill-name">
-                    <span>Terraform</span>
-                    <span>80%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" style="width: 80%;"></div>
-                </div>
+            <div class="skill-bar">
+                <span>CI/CD (Jenkins, GitHub Actions)</span>
+                <div class="progress" style="width: 75%;"></div>
             </div>
         </section>
 
-        <section class="experience-section">
+        <section id="experience">
             <h2>Experience</h2>
             <div class="experience-item">
-                <h3>CLOUD ARCHITECT / SRE LEAD</h3>
-                <p>Avaya - Dubai</p>
-                <p><strong>03/2020 - Current</strong></p>
-                <ul>
-                    <li>Designed and implemented highly available, fault-tolerant cloud environments.</li>
-                    <li>Automated Avaya Contact Center Solution using Terraform and Ansible.</li>
-                    <li>Optimized performance and reduced costs through effective cloud resource management.</li>
-                </ul>
+                <h3>CLOUD ARCHITECT / SRE LEAD | Avaya | 03/2020 - Current</h3>
+                <p>Designed and implemented highly available, fault-tolerant cloud environments. Automated Avaya Contact Center Solution and Configuration Management using Terraform and Ansible.</p>
             </div>
             <div class="experience-item">
-                <h3>CLOUD/DEVOPS CONSULTANT</h3>
-                <p>Virtusa - Dubai, UAE</p>
-                <p><strong>04/2019 - 02/2020</strong></p>
-                <ul>
-                    <li>Orchestrated end-to-end migration projects from on-premises to cloud.</li>
-                    <li>Implemented secure connectivity between on-premises and Azure.</li>
-                    <li>Developed CI/CD pipelines using Jenkins, Git, and Docker.</li>
-                </ul>
+                <h3>CLOUD/DEVOPS CONSULTANT | Virtusa | 04/2019 - 02/2020</h3>
+                <p>Orchestrated end-to-end migration projects, defining requirements, planning migrations, and executing strategies in collaboration with stakeholders.</p>
+            </div>
+            <div class="experience-item">
+                <h3>SOFTWARE ENGINEER - COE | Virtusa | 11/2017 - 02/2020</h3>
+                <p>Developed Java Spring Boot microservices for various applications and integrated applications with RabbitMQ to ensure reliable messaging.</p>
             </div>
         </section>
 
-        <section class="projects-section">
-            <h2>Projects</h2>
-            <div class="project-item">
-                <h3>ML Platform as a Service</h3>
-                <p>Developed a machine learning platform that allows users to build, train, and deploy models efficiently.</p>
-                <ul>
-                    <li>Utilized Azure ML Studio and GitHub Actions for automation.</li>
-                    <li>Implemented CI/CD pipelines for model deployment to Azure Kubernetes Service (AKS).</li>
-                </ul>
-            </div>
-            <div class="project-item">
-                <h3>Auto Email Response System</h3>
-                <p>Created an automated email response system using MLOps for the Avaya Experience Platform.</p>
-                <ul>
-                    <li>Leveraged Azure ML for model training and deployment.</li>
-                    <li>Integrated AI search feature for enhanced user experience.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="education-section">
+        <section id="education">
             <h2>Education</h2>
             <div class="education-item">
-                <h3>Bachelor of Technology in Computer Science</h3>
-                <p>XYZ University - Year of Graduation</p>
-            </div>
-        </section>
-
-        <section class="certifications-section">
-            <h2>Certifications</h2>
-            <ul>
-                <li>Microsoft Certified: Azure Solutions Architect Expert</li>
-                <li>AWS Certified Solutions Architect</li>
-                <li>Certified Kubernetes Administrator (CKA)</li>
-                <li>HashiCorp Certified: Terraform Associate</li>
-            </ul>
-        </section>
-
-        <section class="icons">
-            <h2>DevOps Tools</h2>
-            <div class="icon-container">
-                <i class="fab fa-aws icon" title="AWS"></i>
-                <i class="fab fa-azure icon" title="Azure"></i>
-                <i class="fab fa-docker icon" title="Docker"></i>
-                <i class="fab fa-kubernetes icon" title="Kubernetes"></i>
-                <i class="fas fa-cogs icon" title="Terraform"></i>
-                <i class="fas fa-tools icon" title="Ansible"></i>
-                <i class="fab fa-jenkins icon" title="Jenkins"></i>
-                <i class="fab fa-git-alt icon" title="Git"></i>
+                <h3>Bachelor of Engineering – Computer Science | Rajiv Gandhi Technical University | June 2017</h3>
             </div>
         </section>
 
         <footer>
-            <p>&copy; 2024 Vijay Daswani | <a href="mailto:vijay.daswani@gmail.com">Contact</a></p>
+            <h2>Contact Me</h2>
+            <p>If you have any questions or opportunities, feel free to reach out!</p>
         </footer>
     </div>
 
