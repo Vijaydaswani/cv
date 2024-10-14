@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vijay Daswani - Cloud Architect</title>
 
-    <!-- Import Google Fonts -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Import FontAwesome for icons -->
+    <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    <!-- CSS for the page -->
+    <!-- CSS Styling -->
     <style>
-        /* General styles */
         * {
             margin: 0;
             padding: 0;
@@ -22,19 +21,21 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
             background-color: #f4f4f4;
+            overflow-x: hidden;
         }
 
-        h1, h2, h3 {
+        h1, h2 {
             text-align: center;
             margin-bottom: 20px;
-            font-weight: 700;
             color: #333;
         }
 
-        /* Loader */
+        /* Loader and Pipeline Stages */
         #loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             position: fixed;
             top: 0;
             left: 0;
@@ -43,24 +44,65 @@
             background-color: #fff;
             z-index: 99;
         }
-        #loader img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+
+        #pipeline-stages {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
 
-        /* Typing animation for header */
+        #pipeline-stages li {
+            position: relative;
+            margin: 0 10px;
+            text-align: center;
+            color: #fff;
+        }
+
+        #pipeline-stages li:before {
+            content: '\f058';
+            font-family: FontAwesome;
+            font-size: 30px;
+            color: #bbb;
+            transition: all 0.3s ease;
+        }
+
+        #pipeline-stages li.active:before {
+            color: #4caf50;
+        }
+
+        #pipeline-stages li:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -30px;
+            width: 60px;
+            height: 5px;
+            background-color: #bbb;
+            z-index: -1;
+        }
+
+        #pipeline-stages li:last-child:after {
+            display: none;
+        }
+
+        #pipeline-stages li.active:after {
+            background-color: #4caf50;
+        }
+
+        /* Typing Animation for Header */
         .typing-header {
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Courier New', monospace;
             font-size: 2.5rem;
             white-space: nowrap;
             overflow: hidden;
             border-right: 3px solid;
-            margin: 20px auto;
             width: 22ch;
-            animation: typing 3s steps(22) 1s forwards;
+            animation: typing 4s steps(22) 1s forwards, blink 0.75s step-end infinite;
             color: #0077b5;
+            margin: 40px auto;
         }
 
         @keyframes typing {
@@ -68,222 +110,235 @@
             to { width: 22ch; }
         }
 
-        /* Skill Proficiency Bars */
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: black; }
+        }
+
+        /* Skill Bars */
         .skills-section {
-            width: 80%;
-            margin: 40px auto;
+            width:
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .skills-section.in-view {
+            opacity: 1;
+        }
+
+        .skill {
+            margin: 10px 0;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .skill-bar {
-            background: #e0e0e0;
-            border-radius: 25px;
-            margin-bottom: 20px;
-            position: relative;
-            height: 30px;
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 5px;
             overflow: hidden;
+            margin: 5px 0;
         }
 
-        .skill-bar-fill {
-            height: 100%;
-            border-radius: 25px;
+        .skill-progress {
+            height: 20px;
             background-color: #4caf50;
-            transition: width 2s ease;
-            padding-left: 10px;
-            display: flex;
-            align-items: center;
-            color: white;
+            width: 0;
+            transition: width 1s ease;
         }
 
         /* Experience Section */
         .experience-section {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 10px;
-            margin: 40px auto;
             width: 80%;
+            margin: 40px auto;
+            opacity: 0;
+            transition: opacity 1s ease;
         }
 
-        .job {
-            margin-bottom: 20px;
+        .experience-section.in-view {
+            opacity: 1;
         }
 
-        .job h3 {
-            color: #0077b5;
-            margin-bottom: 10px;
+        .experience-item {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        .job ul {
-            list-style-type: none;
-            padding-left: 20px;
-        }
-
-        .job ul li {
-            margin-bottom: 10px;
-        }
-
-        /* Icons */
+        /* Tools Section */
         .icons {
+            width: 80%;
+            margin: 40px auto;
+            opacity: 0;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            margin-top: 20px;
+            transition: opacity 1s ease;
         }
 
-        .icons i {
-            font-size: 3rem;
-            margin: 10px;
-            color: #4caf50;
+        .icons.in-view-icons {
+            opacity: 1;
+        }
+
+        .icon {
+            font-size: 50px;
+            margin: 20px;
             transition: transform 0.3s;
         }
 
-        .icons i:hover {
-            transform: scale(1.1);
+        .icon:hover {
+            transform: scale(1.2);
         }
 
-        /* Contact Form */
-        .contact-section {
-            background-color: #0077b5;
-            padding: 40px;
-            border-radius: 10px;
-            color: white;
+        /* Footer */
+        footer {
             text-align: center;
-            width: 80%;
-            margin: 40px auto;
+            padding: 20px 0;
+            background: #333;
+            color: #fff;
+            position: relative;
         }
 
-        .contact-section input, .contact-section textarea {
-            width: 90%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
+        footer a {
+            color: #4caf50;
+            text-decoration: none;
         }
-
-        .contact-section button {
-            padding: 10px 20px;
-            border: none;
-            background-color: #4caf50;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        /* Scroll Animations */
-        .animate__animated {
-            visibility: hidden;
-        }
-
-        .in-view {
-            visibility: visible;
-        }
-
     </style>
 </head>
 <body>
-
-    <!-- Loader -->
     <div id="loader">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Devops-toolchain.svg/2000px-Devops-toolchain.svg.png" alt="Loading..." width="150">
+        <ul id="pipeline-stages">
+            <li class="active">Loading Skills</li>
+            <li>Loading Experience</li>
+            <li>Loading Tools</li>
+        </ul>
     </div>
 
-    <!-- Main content -->
-    <header>
-        <h1 class="typing-header">Vijay Daswani - Cloud Architect</h1>
-    </header>
+    <div class="content">
+        <h1 class="typing-header">Vijay Daswani</h1>
+        <h2>Cloud Architect | SRE Lead | Research & Development</h2>
+        <p>Dubai, UAE | +971509930472 | <a href="mailto:vijay.daswani@gmail.com">vijay.daswani@gmail.com</a> | <a href="https://www.linkedin.com/in/vijaydaswani11">LinkedIn</a></p>
+        
+        <section class="skills-section">
+            <h2>Skills</h2>
+            <div class="skill">
+                <div class="skill-name">
+                    <span>JavaScript</span>
+                    <span>80%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">
+                    <span>Python</span>
+                    <span>90%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">
+                    <span>Go</span>
+                    <span>75%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 75%;"></div>
+                </div>
+            </div>
+            <!-- Add more skills as needed -->
+        </section>
 
-    <!-- Skills Section -->
-    <section class="skills-section">
-        <h2>Skills</h2>
-        <div class="skill-bar">
-            <div class="skill-bar-fill" style="width: 90%;">Azure</div>
-        </div>
-        <div class="skill-bar">
-            <div class="skill-bar-fill" style="width: 85%;">AWS</div>
-        </div>
-        <div class="skill-bar">
-            <div class="skill-bar-fill" style="width: 80%;">Terraform</div>
-        </div>
-        <div class="skill-bar">
-            <div class="skill-bar-fill" style="width: 80%;">Kubernetes</div>
-        </div>
-        <div class="skill-bar">
-            <div class="skill-bar-fill" style="width: 75%;">CI/CD (Jenkins)</div>
-        </div>
-    </section>
+        <section class="experience-section">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <h3>CLOUD ARCHITECT / SRE LEAD</h3>
+                <p>Avaya - Dubai</p>
+                <p><strong>03/2020 - Current</strong></p>
+                <ul>
+                    <li>Designed and implemented highly available, fault-tolerant cloud environments.</li>
+                    <li>Automated Avaya Contact Center Solution using Terraform and Ansible.</li>
+                    <!-- Add more responsibilities as needed -->
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>CLOUD/DEVOPS CONSULTANT</h3>
+                <p>Virtusa - Dubai, UAE</p>
+                <p><strong>04/2019 - 02/2020</strong></p>
+                <ul>
+                    <li>Orchestrated end-to-end migration projects.</li>
+                    <li>Implemented secure connectivity between on-premises and Azure.</li>
+                    <!-- Add more responsibilities as needed -->
+                </ul>
+            </div>
+            <!-- Add more experience as needed -->
+        </section>
 
-    <!-- Experience Section -->
-    <section class="experience-section">
-        <h2>Experience</h2>
+        <section class="icons">
+            <h2>DevOps Tools</h2>
+            <i class="fab fa-aws icon" title="AWS"></i>
+            <i class="fab fa-azure icon" title="Azure"></i>
+            <i class="fab fa-docker icon" title="Docker"></i>
+            <i class="fab fa-kubernetes icon" title="Kubernetes"></i>
+            <i class="fas fa-cogs icon" title="Terraform"></i>
+            <i class="fas fa-tools icon" title="Ansible"></i>
+            <i class="fab fa-jenkins icon" title="Jenkins"></i>
+            <i class="fab fa-git-alt icon" title="Git"></i>
+            <!-- Add more tools as needed -->
+        </section>
+    </div>
 
-        <div class="job">
-            <h3>Cloud Architect / SRE Lead - Avaya (2020 - Present)</h3>
-            <ul>
-                <li>Designed and implemented scalable, fault-tolerant cloud architectures in Azure and AWS.</li>
-                <li>Managed 150+ Terraform workspaces for automating infrastructure.</li>
-                <li>Developed CI/CD pipelines using Jenkins and GitOps for microservices deployment.</li>
-                <li>Optimized cloud resources for performance and cost-effectiveness.</li>
-            </ul>
-        </div>
+    <footer>
+        <p>&copy; 2024 Vijay Daswani | <a href="mailto:vijay.daswani@gmail.com">Contact</a></p>
+    </footer>
 
-        <div class="job">
-            <h3>Cloud/DevOps Consultant - Virtusa (2019 - 2020)</h3>
-            <ul>
-                <li>Led migration projects from on-premises to Azure for banking clients.</li>
-                <li>Implemented secure connectivity using VPNs, ExpressRoute, and Azure Active Directory.</li>
-                <li>Collaborated with compliance teams for regulatory adherence during migrations.</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <h3>Software Engineer - Virtusa (2017 - 2020)</h3>
-            <ul>
-                <li>Developed microservices in Spring Boot and integrated DevOps tools.</li>
-                <li>Created Jenkins plugins and developed Docker images for consistent application delivery.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- DevOps Toolchain Icons -->
-    <section class="icons animate__animated animate__fadeInUp">
-        <i class="fab fa-docker"></i>
-        <i class="fab fa-kubernetes"></i>
-        <i class="fab fa-aws"></i>
-        <i class="fas fa-cloud"></i>
-        <i class="fas fa-server"></i>
-        <i class="fas fa-code-branch"></i>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <h2>Contact Me</h2>
-        <form>
-            <input type="text" placeholder="Your Name">
-            <input type="email" placeholder="Your Email">
-            <textarea placeholder="Your Message"></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
-
-    <!-- JS for Animations and Loader -->
     <script>
-        // Simulate page loader
-        window.onload = function() {
-            setTimeout(function() {
-                document.getElementById('loader').style.display = 'none';
-            }, 1500);
-        };
+        // Pipeline loader logic
+        const stages = document.querySelectorAll('#pipeline-stages li');
+        let currentStage = 0;
+        const loader = document.getElementById('loader');
 
-        // Intersection Observer for scroll animations
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                }
-            });
+        function updateStage() {
+            stages[currentStage].classList.add('active');
+            currentStage++;
+            if (currentStage < stages.length) {
+                setTimeout(updateStage, 1000);
+            } else {
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                    document.body.classList.add('loaded');
+                }, 1000);
+            }
+        }
+
+        setTimeout(updateStage, 500);
+
+        // Scroll-based animations
+        const skillsSection = document.querySelector('.skills-section');
+        const experienceSection = document.querySelector('.experience-section');
+        const icons = document.querySelector('.icons');
+
+        window.addEventListener('scroll', function() {
+            const scrollPos = window.scrollY + window.innerHeight;
+
+            if (scrollPos > skillsSection.offsetTop + 200) {
+                skillsSection.classList.add('in-view');
+            }
+            if (scrollPos > experienceSection.offsetTop + 200) {
+                experienceSection.classList.add('in-view');
+            }
+            if (scrollPos > icons.offsetTop + 200) {
+                icons.classList.add('in-view-icons');
+            }
         });
-
-        document.querySelectorAll('.animate__animated').forEach(el => observer.observe(el));
-
     </script>
-
 </body>
 </html>
