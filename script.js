@@ -1,31 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Loader animation
-    const loader = document.getElementById("loader");
+    const loader = document.getElementById('loader');
+    const content = document.querySelector('.content');
+    const sections = document.querySelectorAll('section');
+
+    // Hide loader and show content
     setTimeout(() => {
-        loader.style.display = "none";
-        document.querySelector(".content").style.opacity = 1;
-        revealSections();
-    }, 2000);
+        loader.style.display = 'none';
+        content.style.opacity = 1;
 
-    // Reveal sections on scroll
-    function revealSections() {
-        const sections = document.querySelectorAll(".skills-section, .experience-section, .icons");
-        const options = {
-            root: null,
-            rootMargin: "0px",
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("in-view");
-                }
-            });
-        }, options);
-
+        // Add in-view class to sections
         sections.forEach(section => {
-            observer.observe(section);
+            section.classList.add('in-view');
         });
-    }
+    }, 2000);
 });
