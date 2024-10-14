@@ -3,228 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vijay Daswani - Cloud Architect</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <!-- CSS Styling -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f4f4f4;
-            overflow-x: hidden;
-        }
-
-        h1, h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        /* Loader and Pipeline Stages */
-        #loader {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
-            z-index: 99;
-        }
-
-        #pipeline-stages {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        #pipeline-stages li {
-            position: relative;
-            margin: 0 10px;
-            text-align: center;
-            color: #fff;
-        }
-
-        #pipeline-stages li:before {
-            content: '\f058';
-            font-family: FontAwesome;
-            font-size: 30px;
-            color: #bbb;
-            transition: all 0.3s ease;
-        }
-
-        #pipeline-stages li.active:before {
-            color: #4caf50;
-        }
-
-        #pipeline-stages li:after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: -30px;
-            width: 60px;
-            height: 5px;
-            background-color: #bbb;
-            z-index: -1;
-        }
-
-        #pipeline-stages li:last-child:after {
-            display: none;
-        }
-
-        #pipeline-stages li.active:after {
-            background-color: #4caf50;
-        }
-
-        /* Typing Animation for Header */
-        .typing-header {
-            font-family: 'Courier New', monospace;
-            font-size: 2.5rem;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 3px solid;
-            width: 22ch;
-            animation: typing 4s steps(22) 1s forwards, blink 0.75s step-end infinite;
-            color: #0077b5;
-            margin: 40px auto;
-        }
-
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 22ch; }
-        }
-
-        @keyframes blink {
-            from, to { border-color: transparent; }
-            50% { border-color: black; }
-        }
-
-        /* Skill Bars */
-        .skills-section {
-            width:
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
-
-        .skills-section.in-view {
-            opacity: 1;
-        }
-
-        .skill {
-            margin: 10px 0;
-        }
-
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .skill-bar {
-            width: 100%;
-            background-color: #e0e0e0;
-            border-radius: 5px;
-            overflow: hidden;
-            margin: 5px 0;
-        }
-
-        .skill-progress {
-            height: 20px;
-            background-color: #4caf50;
-            width: 0;
-            transition: width 1s ease;
-        }
-
-        /* Experience Section */
-        .experience-section {
-            width: 80%;
-            margin: 40px auto;
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
-
-        .experience-section.in-view {
-            opacity: 1;
-        }
-
-        .experience-item {
-            background: #fff;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 10px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Tools Section */
-        .icons {
-            width: 80%;
-            margin: 40px auto;
-            opacity: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            transition: opacity 1s ease;
-        }
-
-        .icons.in-view-icons {
-            opacity: 1;
-        }
-
-        .icon {
-            font-size: 50px;
-            margin: 20px;
-            transition: transform 0.3s;
-        }
-
-        .icon:hover {
-            transform: scale(1.2);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background: #333;
-            color: #fff;
-            position: relative;
-        }
-
-        footer a {
-            color: #4caf50;
-            text-decoration: none;
-        }
-    </style>
+    <title>Vijay Daswani's Resume</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div id="loader">
-        <ul id="pipeline-stages">
-            <li class="active">Loading Skills</li>
-            <li>Loading Experience</li>
-            <li>Loading Tools</li>
-        </ul>
+        <div class="loader-bar"></div>
     </div>
 
     <div class="content">
-        <h1 class="typing-header">Vijay Daswani</h1>
-        <h2>Cloud Architect | SRE Lead | Research & Development</h2>
-        <p>Dubai, UAE | +971509930472 | <a href="mailto:vijay.daswani@gmail.com">vijay.daswani@gmail.com</a> | <a href="https://www.linkedin.com/in/vijaydaswani11">LinkedIn</a></p>
-        
+        <header>
+            <h1 class="typing-header">Vijay Daswani</h1>
+            <h2>Cloud Architect | SRE Lead | Research & Development</h2>
+            <p>Dubai, UAE | +971509930472 | <a href="mailto:vijay.daswani@gmail.com">vijay.daswani@gmail.com</a> | <a href="https://www.linkedin.com/in/vijaydaswani11">LinkedIn</a></p>
+        </header>
+
         <section class="skills-section">
             <h2>Skills</h2>
             <div class="skill">
@@ -254,7 +48,6 @@
                     <div class="skill-progress" style="width: 75%;"></div>
                 </div>
             </div>
-            <!-- Add more skills as needed -->
         </section>
 
         <section class="experience-section">
@@ -266,7 +59,6 @@
                 <ul>
                     <li>Designed and implemented highly available, fault-tolerant cloud environments.</li>
                     <li>Automated Avaya Contact Center Solution using Terraform and Ansible.</li>
-                    <!-- Add more responsibilities as needed -->
                 </ul>
             </div>
             <div class="experience-item">
@@ -276,23 +68,22 @@
                 <ul>
                     <li>Orchestrated end-to-end migration projects.</li>
                     <li>Implemented secure connectivity between on-premises and Azure.</li>
-                    <!-- Add more responsibilities as needed -->
                 </ul>
             </div>
-            <!-- Add more experience as needed -->
         </section>
 
         <section class="icons">
             <h2>DevOps Tools</h2>
-            <i class="fab fa-aws icon" title="AWS"></i>
-            <i class="fab fa-azure icon" title="Azure"></i>
-            <i class="fab fa-docker icon" title="Docker"></i>
-            <i class="fab fa-kubernetes icon" title="Kubernetes"></i>
-            <i class="fas fa-cogs icon" title="Terraform"></i>
-            <i class="fas fa-tools icon" title="Ansible"></i>
-            <i class="fab fa-jenkins icon" title="Jenkins"></i>
-            <i class="fab fa-git-alt icon" title="Git"></i>
-            <!-- Add more tools as needed -->
+            <div class="icon-container">
+                <i class="fab fa-aws icon" title="AWS"></i>
+                <i class="fab fa-azure icon" title="Azure"></i>
+                <i class="fab fa-docker icon" title="Docker"></i>
+                <i class="fab fa-kubernetes icon" title="Kubernetes"></i>
+                <i class="fas fa-cogs icon" title="Terraform"></i>
+                <i class="fas fa-tools icon" title="Ansible"></i>
+                <i class="fab fa-jenkins icon" title="Jenkins"></i>
+                <i class="fab fa-git-alt icon" title="Git"></i>
+            </div>
         </section>
     </div>
 
@@ -300,45 +91,6 @@
         <p>&copy; 2024 Vijay Daswani | <a href="mailto:vijay.daswani@gmail.com">Contact</a></p>
     </footer>
 
-    <script>
-        // Pipeline loader logic
-        const stages = document.querySelectorAll('#pipeline-stages li');
-        let currentStage = 0;
-        const loader = document.getElementById('loader');
-
-        function updateStage() {
-            stages[currentStage].classList.add('active');
-            currentStage++;
-            if (currentStage < stages.length) {
-                setTimeout(updateStage, 1000);
-            } else {
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                    document.body.classList.add('loaded');
-                }, 1000);
-            }
-        }
-
-        setTimeout(updateStage, 500);
-
-        // Scroll-based animations
-        const skillsSection = document.querySelector('.skills-section');
-        const experienceSection = document.querySelector('.experience-section');
-        const icons = document.querySelector('.icons');
-
-        window.addEventListener('scroll', function() {
-            const scrollPos = window.scrollY + window.innerHeight;
-
-            if (scrollPos > skillsSection.offsetTop + 200) {
-                skillsSection.classList.add('in-view');
-            }
-            if (scrollPos > experienceSection.offsetTop + 200) {
-                experienceSection.classList.add('in-view');
-            }
-            if (scrollPos > icons.offsetTop + 200) {
-                icons.classList.add('in-view-icons');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
