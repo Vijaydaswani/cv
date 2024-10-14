@@ -3,97 +3,287 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vijay Daswani | Cloud Architect & SRE Lead</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Vijay Daswani - Cloud Architect</title>
+
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Import FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- CSS for the page -->
+    <style>
+        /* General styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        /* Loader */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            z-index: 99;
+        }
+        #loader img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Typing animation for header */
+        .typing-header {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 2.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid;
+            margin: 20px auto;
+            width: 22ch;
+            animation: typing 3s steps(22) 1s forwards;
+            color: #0077b5;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 22ch; }
+        }
+
+        /* Skill Proficiency Bars */
+        .skills-section {
+            width: 80%;
+            margin: 40px auto;
+        }
+
+        .skill-bar {
+            background: #e0e0e0;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            position: relative;
+            height: 30px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            border-radius: 25px;
+            background-color: #4caf50;
+            transition: width 2s ease;
+            padding-left: 10px;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        /* Experience Section */
+        .experience-section {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px auto;
+            width: 80%;
+        }
+
+        .job {
+            margin-bottom: 20px;
+        }
+
+        .job h3 {
+            color: #0077b5;
+            margin-bottom: 10px;
+        }
+
+        .job ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .job ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Icons */
+        .icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .icons i {
+            font-size: 3rem;
+            margin: 10px;
+            color: #4caf50;
+            transition: transform 0.3s;
+        }
+
+        .icons i:hover {
+            transform: scale(1.1);
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background-color: #0077b5;
+            padding: 40px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            width: 80%;
+            margin: 40px auto;
+        }
+
+        .contact-section input, .contact-section textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .contact-section button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4caf50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Scroll Animations */
+        .animate__animated {
+            visibility: hidden;
+        }
+
+        .in-view {
+            visibility: visible;
+        }
+
+    </style>
 </head>
 <body>
-    <div class="header">
-        <div class="container">
-            <h1>Vijay Daswani</h1>
-            <p>Cloud Architect | SRE Lead | Research & Development</p>
-            <div class="contact">
-                <a href="https://www.linkedin.com/in/vijaydaswani11">LinkedIn</a> |
-                Dubai, UAE | +971509930472 | <a href="mailto:vijay.daswani@gmail.com">vijay.daswani@gmail.com</a>
-            </div>
-        </div>
+
+    <!-- Loader -->
+    <div id="loader">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Devops-toolchain.svg/2000px-Devops-toolchain.svg.png" alt="Loading..." width="150">
     </div>
 
-    <div class="summary">
-        <div class="container">
-            <h2>Professional Summary</h2>
-            <p>
-                Cloud, DevOps, and SRE professional with 6.5+ years of experience in crafting, deploying, and managing highly available, scalable, and fault-tolerant cloud environments.
-                Expertise in <span>Azure</span> and <span>AWS</span>, complemented by proficiency in <span>Kubernetes</span>, <span>Docker</span>, <span>Helm</span>, and automation tools like <span>Terraform</span> and <span>Ansible</span>.
-                Skilled in Python, scripting, and advanced CI/CD pipeline management with Jenkins and GitOps. Proven leader in guiding teams to achieve scalable, reliable cloud solutions.
-            </p>
+    <!-- Main content -->
+    <header>
+        <h1 class="typing-header">Vijay Daswani - Cloud Architect</h1>
+    </header>
+
+    <!-- Skills Section -->
+    <section class="skills-section">
+        <h2>Skills</h2>
+        <div class="skill-bar">
+            <div class="skill-bar-fill" style="width: 90%;">Azure</div>
         </div>
-    </div>
-
-    <div class="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skill-grid">
-                <div class="skill-card">
-                    <img src="images/python.png" alt="Python">
-                    <p>Python</p>
-                </div>
-                <div class="skill-card">
-                    <img src="images/docker.png" alt="Docker">
-                    <p>Docker</p>
-                </div>
-                <div class="skill-card">
-                    <img src="images/kubernetes.png" alt="Kubernetes">
-                    <p>Kubernetes</p>
-                </div>
-                <div class="skill-card">
-                    <img src="images/terraform.png" alt="Terraform">
-                    <p>Terraform</p>
-                </div>
-                <div class="skill-card">
-                    <img src="images/ansible.png" alt="Ansible">
-                    <p>Ansible</p>
-                </div>
-                <div class="skill-card">
-                    <img src="images/jenkins.png" alt="Jenkins">
-                    <p>Jenkins</p>
-                </div>
-            </div>
+        <div class="skill-bar">
+            <div class="skill-bar-fill" style="width: 85%;">AWS</div>
         </div>
-    </div>
-
-    <div class="experience">
-        <div class="container">
-            <h2>Experience</h2>
-
-            <div class="job">
-                <h3>Cloud Architect / SRE Lead <span> | Avaya - Dubai | 03/2020 - Current</span></h3>
-                <ul>
-                    <li>Designed and implemented highly available, fault-tolerant cloud environments.</li>
-                    <li>Automated Avaya Contact Center Solution and Configuration Management using Terraform and Ansible.</li>
-                    <li>Developed Helm charts for microservices deployment in AKS.</li>
-                    <li>Managed 150+ Terraform workspaces, building reusable modules for infrastructure automation.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3>Cloud/DevOps Consultant <span>| Virtusa - Dubai | 04/2019 - 02/2020</span></h3>
-                <ul>
-                    <li>Orchestrated migration projects with Mashreq Bank, ensuring compliance and security.</li>
-                    <li>Implemented Azure Active Directory and secure connectivity options such as VPNs and ExpressRoute.</li>
-                    <li>Configured Azure Backup, Site Recovery for disaster recovery and business continuity strategies.</li>
-                </ul>
-            </div>
+        <div class="skill-bar">
+            <div class="skill-bar-fill" style="width: 80%;">Terraform</div>
         </div>
-    </div>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Vijay Daswani | Cloud Architect & SRE Lead</p>
+        <div class="skill-bar">
+            <div class="skill-bar-fill" style="width: 80%;">Kubernetes</div>
         </div>
-    </footer>
+        <div class="skill-bar">
+            <div class="skill-bar-fill" style="width: 75%;">CI/CD (Jenkins)</div>
+        </div>
+    </section>
 
-    <!-- Optional JavaScript for Animations -->
-    <script src="script.js"></script>
+    <!-- Experience Section -->
+    <section class="experience-section">
+        <h2>Experience</h2>
+
+        <div class="job">
+            <h3>Cloud Architect / SRE Lead - Avaya (2020 - Present)</h3>
+            <ul>
+                <li>Designed and implemented scalable, fault-tolerant cloud architectures in Azure and AWS.</li>
+                <li>Managed 150+ Terraform workspaces for automating infrastructure.</li>
+                <li>Developed CI/CD pipelines using Jenkins and GitOps for microservices deployment.</li>
+                <li>Optimized cloud resources for performance and cost-effectiveness.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <h3>Cloud/DevOps Consultant - Virtusa (2019 - 2020)</h3>
+            <ul>
+                <li>Led migration projects from on-premises to Azure for banking clients.</li>
+                <li>Implemented secure connectivity using VPNs, ExpressRoute, and Azure Active Directory.</li>
+                <li>Collaborated with compliance teams for regulatory adherence during migrations.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <h3>Software Engineer - Virtusa (2017 - 2020)</h3>
+            <ul>
+                <li>Developed microservices in Spring Boot and integrated DevOps tools.</li>
+                <li>Created Jenkins plugins and developed Docker images for consistent application delivery.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- DevOps Toolchain Icons -->
+    <section class="icons animate__animated animate__fadeInUp">
+        <i class="fab fa-docker"></i>
+        <i class="fab fa-kubernetes"></i>
+        <i class="fab fa-aws"></i>
+        <i class="fas fa-cloud"></i>
+        <i class="fas fa-server"></i>
+        <i class="fas fa-code-branch"></i>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="Your Message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- JS for Animations and Loader -->
+    <script>
+        // Simulate page loader
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('loader').style.display = 'none';
+            }, 1500);
+        };
+
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        });
+
+        document.querySelectorAll('.animate__animated').forEach(el => observer.observe(el));
+
+    </script>
+
 </body>
 </html>
