@@ -3,122 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijay Daswani's Profile</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Terraform Themed Portfolio - Vijay Daswani</title>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Vijay Daswani</h1>
-        <nav>
+    <div class="loader">Loading...</div>
+    <div class="container" style="display: none;">
+        <header>
+            <h1>Vijay Daswani</h1>
+            <h2>Cloud Architect | SRE Lead | Research & Development</h2>
+            <p>Dubai, UAE | +971509930472 | <a href="mailto:vijay.daswani@gmail.com">vijay.daswani@gmail.com</a> | <a href="https://www.linkedin.com/in/vijaydaswani11" target="_blank">LinkedIn</a></p>
+        </header>
+        <section class="summary">
+            <h2>Professional Summary</h2>
+            <p>Cloud, DevOps, and SRE professional with 6.5+ years of experience in crafting, deploying, and managing highly available, scalable, and fault-tolerant cloud environments...</p>
+        </section>
+        <section class="skills">
+            <h2>Skills</h2>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li>Programming Languages: JavaScript, Python, Go</li>
+                <li>Container Orchestration Tools: Docker, Kubernetes, OpenShift, Helm</li>
+                <li>CI/CD: Jenkins, GitHub Actions</li>
+                <li>Monitoring: Datadog, Grafana, Prometheus</li>
+                <!-- Add more skills as necessary -->
             </ul>
-        </nav>
-    </header>
-
-    <section id="about" class="terraform-section">
-        <h2>About Me</h2>
-        <pre><code class="terraform">resource "profile" "vijay" {
-  name        = "Vijay Daswani"
-  experience  = "7 years in Cloud, DevOps, and SRE roles"
-  certification = ["Azure", "AWS", "Kubernetes", "Terraform"]
-}</code></pre>
-        <p>I'm a passionate technologist with a strong foundation in infrastructure as code, DevOps practices, and cloud solutions. I have experience in various environments and tools, aiming to deliver high-quality solutions for complex problems.</p>
-    </section>
-
-    <section id="skills" class="terraform-section">
-        <h2>Skills</h2>
-        <div class="skill-card">
-            <h3>Cloud & Infrastructure</h3>
-            <pre><code class="terraform">resource "cloud_provider" "aws" {
-  services = ["EC2", "S3", "RDS"]
-}</code></pre>
-            <div class="progress-container">
-                <div class="progress">
-                    <div class="progress-bar" style="width: 90%;">90%</div>
-                </div>
+        </section>
+        <section class="experience">
+            <h2>Experience</h2>
+            <div class="job">
+                <h3>CLOUD ARCHITECT / SRE LEAD</h3>
+                <p>Avaya - Dubai | 03/2020 - Current</p>
+                <ul>
+                    <li>Designed and implemented highly available, fault-tolerant cloud environments.</li>
+                    <li>Automated Avaya Contact Center Solution and Configuration Management using Terraform and Ansible.</li>
+                    <!-- Add more responsibilities as necessary -->
+                </ul>
             </div>
-        </div>
-        <div class="skill-card">
-            <h3>DevOps & CI/CD</h3>
-            <pre><code class="terraform">pipeline "ci_cd" {
-  stages = ["build", "test", "deploy"]
-}</code></pre>
-            <div class="progress-container">
-                <div class="progress">
-                    <div class="progress-bar" style="width: 85%;">85%</div>
-                </div>
-            </div>
-        </div>
-        <div class="skill-card">
-            <h3>Containerization</h3>
-            <pre><code class="terraform">resource "docker_container" "nginx" {
-  image = "nginx:latest"
-  ports = ["80:80"]
-}</code></pre>
-            <div class="progress-container">
-                <div class="progress">
-                    <div class="progress-bar" style="width: 80%;">80%</div>
-                </div>
-            </div>
-        </div>
-        <div class="skill-card">
-            <h3>Scripting & Automation</h3>
-            <pre><code class="terraform">data "script" "automation" {
-  path = "scripts/setup.sh"
-}</code></pre>
-            <div class="progress-container">
-                <div class="progress">
-                    <div class="progress-bar" style="width: 75%;">75%</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="terraform-section">
-        <h2>Projects</h2>
-        <div class="project-card">
-            <h3>Infrastructure Automation</h3>
-            <pre><code class="terraform">module "vpc" {
-  source = "terraform-aws-modules/vpc/aws"
-  name   = "my-vpc"
-}</code></pre>
-            <p>Automated AWS infrastructure provisioning using Terraform modules, improving deployment efficiency by 40%.</p>
-        </div>
-        <div class="project-card">
-            <h3>CI/CD Pipeline Implementation</h3>
-            <pre><code class="terraform">resource "aws_codepipeline" "example" {
-  name     = "example-pipeline"
-  role_arn = "${aws_iam_role.example.arn}"
-}</code></pre>
-            <p>Implemented a CI/CD pipeline using AWS CodePipeline and Terraform, leading to faster deployment cycles.</p>
-        </div>
-        <div class="project-card">
-            <h3>MLOps for Digital Team</h3>
-            <pre><code class="terraform">resource "mlops" "auto_email_response" {
-  project = "Avaya Experience Platform"
-}</code></pre>
-            <p>Designed an MLOps pipeline to automate email responses, utilizing Azure ML Studio for model training and deployment.</p>
-        </div>
-    </section>
-
-    <section id="contact" class="terraform-section">
-        <h2>Contact Me</h2>
-        <form>
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Vijay Daswani</p>
-    </footer>
-
-    <script src="script.js"></script>
+            <!-- Add more job sections as necessary -->
+        </section>
+        <footer>
+            <p>&copy; 2024 Vijay Daswani. All Rights Reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
