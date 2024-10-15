@@ -10,6 +10,9 @@ header {
     color: white;
     padding: 20px 0;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 header h1 {
@@ -38,6 +41,12 @@ nav a {
     margin: 20px 0;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 h2 {
@@ -69,6 +78,7 @@ pre {
     color: white;
     text-align: center;
     padding: 5px 0;
+    transition: width 0.5s;
 }
 
 .project-card {
