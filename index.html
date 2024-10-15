@@ -7,70 +7,81 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="loader" class="loader">
-        <div class="loader-bar"></div>
-    </div>
+    <header>
+        <div class="logo">Vijay Daswani</div>
+        <nav>
+            <ul>
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="content">
-        <header>
-            <h1>Vijay Daswani</h1>
-            <p>Cloud Architect | SRE Lead | Research & Development</p>
-            <p>Dubai, UAE | +971509930472 | vijay.daswani@gmail.com | <a href="https://www.linkedin.com/in/vijaydaswani11" target="_blank">LinkedIn</a></p>
-        </header>
+    <section class="hero">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Cloud Architect | SRE Lead | Research & Development</p>
+    </section>
 
-        <section id="summary">
-            <h2>Professional Summary</h2>
-            <p>Cloud, DevOps, and SRE professional with 6.5+ years of experience in crafting, deploying, and managing highly available, scalable, and fault-tolerant cloud environments. Expertise in Azure and AWS, complemented by strong proficiency in Kubernetes, Docker, and Helm. Adept at using Terraform and Ansible for seamless infrastructure automation and Jenkins CI/CD and GitOps for efficient deployment pipelines.</p>
-        </section>
+    <section id="summary" class="fade-in">
+        <h2>Professional Summary</h2>
+        <p>Cloud, DevOps, and SRE professional with 6.5+ years of experience in crafting, deploying, and managing highly available, scalable, and fault-tolerant cloud environments.</p>
+    </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skill-bar">
-                <span>Cloud (Azure, AWS)</span>
-                <div class="progress" style="width: 90%;"></div>
+    <section id="skills" class="fade-in">
+        <h2>Skills</h2>
+        <div class="skill-container">
+            <div class="skill-card">
+                <h3>Cloud</h3>
+                <p>Azure, AWS</p>
             </div>
-            <div class="skill-bar">
-                <span>Containerization (Docker, Kubernetes)</span>
-                <div class="progress" style="width: 85%;"></div>
+            <div class="skill-card">
+                <h3>Containerization</h3>
+                <p>Docker, Kubernetes</p>
             </div>
-            <div class="skill-bar">
-                <span>Infrastructure as Code (Terraform, Ansible)</span>
-                <div class="progress" style="width: 80%;"></div>
+            <div class="skill-card">
+                <h3>CI/CD</h3>
+                <p>Jenkins, GitHub Actions</p>
             </div>
-            <div class="skill-bar">
-                <span>CI/CD (Jenkins, GitHub Actions)</span>
-                <div class="progress" style="width: 75%;"></div>
+            <div class="skill-card">
+                <h3>Infrastructure as Code</h3>
+                <p>Terraform, Ansible</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="experience">
-            <h2>Experience</h2>
-            <div class="experience-item">
-                <h3>CLOUD ARCHITECT / SRE LEAD | Avaya | 03/2020 - Current</h3>
-                <p>Designed and implemented highly available, fault-tolerant cloud environments. Automated Avaya Contact Center Solution and Configuration Management using Terraform and Ansible.</p>
-            </div>
-            <div class="experience-item">
-                <h3>CLOUD/DEVOPS CONSULTANT | Virtusa | 04/2019 - 02/2020</h3>
-                <p>Orchestrated end-to-end migration projects, defining requirements, planning migrations, and executing strategies in collaboration with stakeholders.</p>
-            </div>
-            <div class="experience-item">
-                <h3>SOFTWARE ENGINEER - COE | Virtusa | 11/2017 - 02/2020</h3>
-                <p>Developed Java Spring Boot microservices for various applications and integrated applications with RabbitMQ to ensure reliable messaging.</p>
-            </div>
-        </section>
+    <section id="experience" class="fade-in">
+        <h2>Experience</h2>
+        <div class="card">
+            <h3>CLOUD ARCHITECT / SRE LEAD | Avaya</h3>
+            <p>Designed and implemented highly available, fault-tolerant cloud environments. Automated Avaya Contact Center Solution using Terraform and Ansible.</p>
+        </div>
+        <div class="card">
+            <h3>CLOUD/DEVOPS CONSULTANT | Virtusa</h3>
+            <p>Orchestrated end-to-end migration projects, planning migrations, and executing strategies in collaboration with stakeholders.</p>
+        </div>
+    </section>
 
-        <section id="education">
-            <h2>Education</h2>
-            <div class="education-item">
-                <h3>Bachelor of Engineering – Computer Science | Rajiv Gandhi Technical University | June 2017</h3>
-            </div>
-        </section>
+    <section id="education" class="fade-in">
+        <h2>Education</h2>
+        <div class="card">
+            <h3>Bachelor of Engineering – Computer Science</h3>
+            <p>Rajiv Gandhi Technical University | June 2017</p>
+        </div>
+    </section>
 
-        <footer>
-            <h2>Contact Me</h2>
-            <p>If you have any questions or opportunities, feel free to reach out!</p>
-        </footer>
-    </div>
+    <section id="contact" class="fade-in">
+        <h2>Contact Me</h2>
+        <p>If you have any questions or opportunities, feel free to reach out!</p>
+        <p>Email: vijay.daswani@gmail.com | Phone: +971509930472</p>
+        <p><a href="https://www.linkedin.com/in/vijaydaswani11" target="_blank">LinkedIn</a></p>
+    </section>
+
+    <footer>
+        <p>© 2024 Vijay Daswani. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
