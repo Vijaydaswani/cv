@@ -1,10 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const loader = document.getElementById('loader');
-    const content = document.querySelector('.content');
-    
-    // Hide loader and show content
-    setTimeout(() => {
-        loader.style.display = 'none';
-        content.style.opacity = 1;
-    }, 2000);
+    const sections = document.querySelectorAll('section');
+    const options = {
+        root: null,
+        threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-visible');
+            }
+        });
+    }, options);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 });
